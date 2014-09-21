@@ -36,7 +36,9 @@ class NQueens:
     def solveNQRec(self,n,board,col):
         if col >= n:
             # on to the last of the col can lead to one result. 
-            self.result.append(board[:])
+            # here must append the clone of board WHY ?.
+            print board
+            self.result.append(board)
         for row in range(n):
             # if not safe, then no go deep.
             if self.safe(n, row, col, board):
@@ -61,5 +63,5 @@ class NQueens:
                 return False
         return True
 
-print NQueens().solveNQueens(1)
+print NQueens().solveNQueens(4)
 

@@ -1,3 +1,5 @@
+# Check the method in the java solution. 
+#
 class TreeNode:
     def __init__(self, x):
         self.val = x
