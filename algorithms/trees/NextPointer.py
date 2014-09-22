@@ -27,14 +27,14 @@
 # then connect its two childres, if it has a next pointer (its parent applied this pointer)
 # then connect its right child to its sibling's left child.
 
- class TreeNode:
-     def __init__(self, x):
-         self.val = x
-         self.left = None
-         self.right = None
-         self.next = None
+class TreeNode:
+    def __init__(self, x):
+        self.val = x
+        self.left = None
+        self.right = None
+        self.next = None
 
-class NestPointer
+class NestPointer:
 
     # @param root, a tree node
     # @return nothing
