@@ -29,27 +29,23 @@ class NQueens:
 	# @return a list of lists of string
     def solveNQueens(self, n):
         # Use '.'*n to create n '.' for each line of board and thus init n*n '.'s.
-        board = ['.'*n for x in range(n)]
+        board = [['.' for x in range(n)] for x in range(n)]
         self.solveNQRec(n,board,0)
         return self.result
 
     def solveNQRec(self,n,board,col):
         if col >= n:
             # on to the last of the col can lead to one result. 
-            # here must append the clone of board WHY ?.
-            print board
-            self.result.append(board)
+            self.result.append([[''.join(x) for x in i]for i in board])
+            return
         for row in range(n):
             # if not safe, then no go deep.
             if self.safe(n, row, col, board):
-                str = board[row]
                 # replace the col index position to Q
-                str = str[:col] + 'Q' + str[col+1:]
-                board[row] = str
+                board[row][col] = 'Q'
                 self.solveNQRec(n,board,col + 1)
                 # if backtrack to here, then set current value back to '.'.
-                str = str[:col] + '.' + str[col+1:]
-                board[row] = str
+                board[row][col] = '.'
 
     def safe(self, n, row, col, queens):
         # do not need to check column since each loop goes on a single col.
@@ -63,5 +59,5 @@ class NQueens:
                 return False
         return True
 
-print NQueens().solveNQueens(4)
+print NQueens().solveNQueens(9)
 
