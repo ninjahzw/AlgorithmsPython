@@ -1,3 +1,4 @@
+# Problem:
 # A robot is located at the top-left corner of a m x n grid (marked 'Start' in the diagram below).
 # 
 # The robot can only move either down or right at any point in time.
@@ -10,30 +11,43 @@
 # 
 # Note: m and n will be at most 100.
 # 
-# 
+# Idea:
+# Use Dynamic Programming:
+# board[i][j] = board[i-1][j] + board[i][j-1]
+# Two dimensional array to store each position
+#
+
 class UnitPaths:
-    total = 0
+    # Nested loop approach
     # @return an integer
-    def uniquePaths(self, m, n):
-        self.rec(0,0,m,n) 
-        return self.total
-    def rec(self,i,j,m,n):
-        if i == m-1 and j == n-1:
-            self.total += 1
-            return
-        if i == m-1:
-            self.rec(i,j+1,m,n)
-            return
-        if j == n-1:
-            self.rec(j,i+1,m,n)
-            return
-        self.rec(i,j+1,m,n)
-        self.rec(j,i+1,m,n)
-        self.rec(j+1,i+1,m,n)
-
     def uniquePathsDp(self, m, n):
-        
+        board = [[0 for x in xrange(n)] for x in xrange(m)]
+        # initialize first row and first col
+        for i in xrange(n):
+            board [0][i] = 1
+        for i in xrange(m):
+            board [i][0] = 1
+        for i in xrange(1,m):
+            for j in xrange(1,n):
+                board[i][j] = board[i-1][j] + board[i][j-1]
+        return board[m-1][n-1]
 
+    # Recursive approach
+    # NOTE!
+    # DO NOT forget to use the tmp two dimensional array to store the already calculated value
+    # otherwise the computation complexity will be Huuuuuuge !
+    board = []
+    def uniquePaths(self, m, n):
+        self.board = [[0 for x in xrange(n)] for x in xrange(m)]
+        return self.rec(m-1,n-1)
+    def rec(self,i,j):
+        # for position 0,0 the possibility is 1
+        if i == 0 or j == 0:
+            return 1
+        if self.board[i][j] != 0:
+            return self.board[i][j]
+        self.board[i][j] = self.rec(i-1,j) + self.rec(i,j-1)
+        return self.board[i][j]
 
-print UnitPaths().uniquePaths(100,100)            
+print UnitPaths().uniquePaths(2,4)
 
