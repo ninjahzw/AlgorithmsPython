@@ -17,7 +17,7 @@
 # Two dimensional array to store each position
 #
 
-class UnitPaths:
+class UniPaths:
     # Nested loop approach
     # @return an integer
     def uniquePathsDp(self, m, n):
@@ -49,5 +49,5 @@ class UnitPaths:
         self.board[i][j] = self.rec(i-1,j) + self.rec(i,j-1)
         return self.board[i][j]
 
-print UnitPaths().uniquePaths(2,4)
+print UniPaths().uniquePaths(2,4)
 
