@@ -41,7 +41,8 @@ class UniPaths:
         self.board = [[0 for x in xrange(n)] for x in xrange(m)]
         return self.rec(m-1,n-1)
     def rec(self,i,j):
-        # for position 0,0 the possibility is 1
+        # for position i,0 or 0,j the possibility is 1
+        # NOTE! here is or not and.
         if i == 0 or j == 0:
             return 1
         if self.board[i][j] != 0:
@@ -49,5 +50,5 @@ class UniPaths:
         self.board[i][j] = self.rec(i-1,j) + self.rec(i,j-1)
         return self.board[i][j]
 
-print UniPaths().uniquePaths(2,4)
+print UniPaths().uniquePaths(100,100)
 
