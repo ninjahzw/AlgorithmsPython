@@ -52,7 +52,6 @@ class FourSum:
                         head += 1
                     else:
                         tail -= 1
-                               
         return list(result)
 
     def fourSumHash(self, num, target):
