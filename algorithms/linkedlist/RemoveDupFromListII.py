@@ -6,7 +6,8 @@
 # Given 1->1->1->2->3, return 2->3.
 #
 # Idea:
-# Maintain two pointers, Notice the boundary conditions.
+# LinkedList operation always more complicated than thought!
+# NOTE! NOTE! the head need to be changed if head elements will be deleted!
 
 class ListNode:
     def __init__(self, x):
@@ -17,32 +18,26 @@ class RemoveDupSortedList:
     # @param head, a ListNode
     # @return a ListNode
     def deleteDuplicates(self, head):
-        if head is None or head.next is None:
-            return head
-       # while head.next and  head.val == head.next.val:
-       #     head = head.next
-       # if not head.next:
+        headPre = ListNode(0)
+        headPre.next = head
+        pre = headPre
+        cur = pre.next
+        
+        while cur:
+            # check equality of cur and cur.next 
+            while cur.next and cur.val == cur.next.val:
+                cur = cur.next
+            # cur need to be deleted
+            # NOTE if head changes, headPre moves with pre.
+            if cur is not pre.next:
+                pre.next = cur.next
+            # cur does not need to be deleted.
+            else:
+                pre = pre.next
+            cur = pre.next
 
-       #     return None
-       # head = head.next
-       # if head is None or head.next is None:
-       #     return head
-        pre = ListNode(0);pre.next = head
-        a = head 
-        b = head.next
-        while b:
-            haveDup = False
-            while b and a.val == b.val:
-                haveDup = True
-                a.next = b.next
-                b = b.next 
-            # if dup the also remove the start element of the dup seg.
-            # also consider the end boundary condition, if b is None then b do not have a next. 
-            if haveDup: a = b; pre.next = b;b = b.next if b else b;continue
-            pre = pre.next
-            a = a.next
-            b = b.next
-        return head
+        return headPre.next
+
 
 a = ListNode(1)
 b = ListNode(1)
