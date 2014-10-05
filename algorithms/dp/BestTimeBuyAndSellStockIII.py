@@ -11,7 +11,7 @@
 # It's really easy to solve this problem use O(n^2) approach:
 # for each i in range of the input, calculate max profit of [0...i] and [i+1...n] respectively
 # and sum them up as the result of i
-# compair each result (i) to find the maxmum
+# compare each result (i) to find the maxmum
 # Note that each max profit calculation takes O(n) so the total time cost is O(n^2)
 # 
 # Better Idea? Yes!
@@ -19,7 +19,7 @@
 # We know that for each i we don't have to recalculate [0...i-1],[0...i-2] and so on.
 # For each step, we calculate current max profit and store it to an array.[0...i]
 # then reversely do the same thing [n-1...i+1]
-# at the same time, compair each sum =  maxprofit([n-1...i+1]) + maxprofit([0...i])
+# at the same time, compare each sum =  maxprofit([n-1...i+1]) + maxprofit([0...i])
 
 class BestTimeBuyAndSellStockIII():
     # @param prices, a list of integer
@@ -41,9 +41,9 @@ class BestTimeBuyAndSellStockIII():
         result = maxProfit
 
         #########
-        # reversely calculate the profit from i to len(prices-1) and,
-        # compair the sum of each pair of i(reverse) and i-1(normal) 
-        # in the temp storage 'profits' to current maxmum,
+        # reversely calculate the profit from len(prices)-1 to i and,
+        # compare the sum of each pair of i(reverse) and i-1(normal)
+        # in the temp storage 'profits' to current maximum,
         # which is initialized to the max profit of transaction once (0 to len-1).
         maxProfit = 0
         max = prices[len(prices) -1]

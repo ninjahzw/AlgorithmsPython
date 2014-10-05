@@ -20,9 +20,9 @@
 # L + mR + k = 2(L + nR + k)
 # => mR = L + k + 2nR
 # => L + k = (m+2n)R where (m+2n) is Positive Integer
-# which means L and k are complementary based on Y, So start fron K, with L steps can reach the start point.
-# Or explan like this: L = R-k + (m+2n-1)R
-# R-k is the start point, and (m+2n-1)R means goes serveral Cycles.
+# which means L and k are complementary based on Y, So start from K, with L steps can reach the start point.
+# Or explain like this: L = R-k + (m+2n-1)R
+# R-k is the start point, and (m+2n-1)R means goes several Cycles.
 #
 # see detail on:
 # http://fisherlei.blogspot.com/2013/11/leetcode-linked-list-cycle-ii-solution.html 
@@ -35,15 +35,15 @@ class ListNode:
 
 class Solution:
     # @param head, a ListNode
-    # @return a boolean
+    # @return a Node
     def hasCycle(self, head):
         fast = head
         slow = head
         hasCycle = False
-        while fast != None and fast.next != None:
+        while fast is not None and fast.next is not None:
             slow = slow.next
             fast = fast.next.next
-            # here compair the object not the value, becuase there may have dup value.
+            # here compare the object not the value, because there may have dup value.
             if slow == fast:
                 hasCycle = True
                 break 

@@ -12,7 +12,7 @@
 #
 # Idea:
 # Maintain two main pointers (actually 3) the cursor pointer traverse through the list.
-# NOTE the start pointer starts from head when the cursor reach to the n-th emelent.
+# NOTE the start pointer starts from head when the cursor reach to the n-th element.
 # when the cursor reaches the end, the position of the start pointer is the element to remove.
 # Also need to maintain another pointer right before the start pointer to perform the remove.
 

@@ -22,7 +22,7 @@ class SimplifyPath:
     def simplifyPath(self, path):
         result = []
         pathList = path.split('/')
-            for content in pathList:
+        for content in pathList:
                 # skip empty strings
                 if content:
                     if content == '..':

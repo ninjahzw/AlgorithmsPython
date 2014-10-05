@@ -7,7 +7,7 @@
 # Return "100".
 # 
 # Idea:
-# Just caculate bit by bit...
+# Just calculate bit by bit...
 
 class AddBinary:
     # @param a, a string
@@ -38,7 +38,6 @@ class AddBinary:
             a = a[:-1]
             b = b[:-1]
         left = a if len(b) == 0 else b
-        print left,nextbit
 
         while len(left) > 0:
             sum = int(left[-1]) + nextbit 

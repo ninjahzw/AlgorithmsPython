@@ -38,7 +38,7 @@ class UniPathsObs:
             return 0
         # for position 0,0 the possibility is 1
         # this time here has to be 'and' because considering the 
-        # existance of obstacle the first row or col may not be all '1's.
+        # existence of obstacle the first row or col may not be all '1's.
         if i == 0 and j == 0:
             return 1
         if self.board[i][j] != -1:
