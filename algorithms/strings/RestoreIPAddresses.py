@@ -48,5 +48,5 @@ class RestoreIPAddresses:
             self.rec(s, index-1, points, s[index] + current, times+1)
 
 
-print RestoreIPAddresses().restoreIpAddresses("111111111")
+print RestoreIPAddresses().restoreIpAddresses("25525511135")
 

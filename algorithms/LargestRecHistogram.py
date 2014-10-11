@@ -1,10 +1,7 @@
 class LargestRecHistogram:
     # @param height, a list of integer
     # @return an integer
-    def largestRectangleArea(self, height):
-                     
-
-    
+    # def largestRectangleArea(self, height):
 
     # NOTE This solution is wrong and inefficient!!,
     def largestRectangleArea_Old(self, height):

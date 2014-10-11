@@ -18,9 +18,9 @@
 # sort first, and maintain two pointers (head and tail)
 # and an outer for loop to loop through the dataset
 # for each each element of the dataset position at i:
-# head = i+1, tail = leng-1
-# then compair num[head]+num[tail] to -num[i]
-# if geater then reduce tail if smaller then increase head (same to 2sum)
+# head = i+1, tail = length-1
+# then compare num[head]+num[tail] to -num[i]
+# if greater then reduce tail if smaller then increase head (same to 2sum)
 # NOTE do not forget tho skip duplicate.
  
 class ThreeSum:

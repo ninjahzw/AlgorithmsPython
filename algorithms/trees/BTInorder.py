@@ -1,8 +1,8 @@
 # Problem:
-# Given a binary tree, return the inorder traversal of its nodes' values.
+# Given a binary tree, return the in-order traversal of its nodes' values.
 #
 # Idea:
-# NOTE Always keep an eye on those simple quesitons!
+# NOTE Always keep an eye on those simple questions!
 class BTInorder:
     # @param root, a tree node
     # @return a list of integers
