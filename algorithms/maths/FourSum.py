@@ -36,7 +36,7 @@ class FourSum:
                 # NOTE! start from j+1,not 0!
                 head = j
                 tail = length-1
-                while (head < tail):
+                while head < tail:
                     s = num[head] + num[tail] + num[i] + num[j]
                     if s == target:
                         row = [num[i],num[j],num[head],num[tail]]

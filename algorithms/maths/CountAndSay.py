@@ -34,5 +34,5 @@ class CountAndSay:
                 # reset counter
                 counter = 1
         return result
+
 print CountAndSay().countAndSay(2)
-                
