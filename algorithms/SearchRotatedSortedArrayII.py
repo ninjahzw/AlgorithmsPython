@@ -14,7 +14,7 @@ else:
 and thus the time complexity rise up to o(n) why?
 
 """
-__author__ = 'Zhaowei'
+__author__ = 'HouZhaowei'
 class Solution:
     # @param A, a list of integers
     # @param target, an integer to be searched
