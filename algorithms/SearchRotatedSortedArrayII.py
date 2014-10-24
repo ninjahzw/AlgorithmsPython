@@ -12,7 +12,10 @@ else:
     start += 1
 -----------
 and thus the time complexity rise up to o(n) why?
-
+e.g. condition 1: A = 1,2,3,3,3,3,3 -> B = 3,1,2,3,3,3,3
+or A = 3,3,3,3,3,3,4,5 -> B = 3,3,3,3,3,4,5,3
+two different conditions result into the the same consequence B[mid] = B[start]
+so if we meet an equal, we have to add start by 1 then check a gain.
 """
 __author__ = 'Zhaowei'
 class Solution:
