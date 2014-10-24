@@ -10,7 +10,7 @@ def append(list):
     list.append(1)
 list = [0]
 reassign(list)
-# append(list)
+append(list)
 print list
 
 def reassign1(a):

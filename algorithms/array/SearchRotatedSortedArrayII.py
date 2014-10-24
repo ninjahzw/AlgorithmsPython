@@ -17,7 +17,7 @@ or A = 3,3,3,3,3,3,4,5 -> B = 3,3,3,3,3,4,5,3
 two different conditions result into the the same consequence B[mid] = B[start]
 so if we meet an equal, we have to add start by 1 then check a gain.
 """
-__author__ = 'Zhaowei'
+__author__ = 'HouZhaowei'
 class Solution:
     # @param A, a list of integers
     # @param target, an integer to be searched
