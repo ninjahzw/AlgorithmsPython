@@ -48,15 +48,15 @@ class Permutations:
         self.result = []
     def get_permutation(self, n, k):
         array = [x for x in range(n)]
-        return self.rec(array, n, k)
-    def rec(self, array, n, k):
+        return self._rec(array, n, k)
+    def _rec(self, array, n, k):
         sub = 1
         for i in range(1, n):
             sub *= i
         cur = k/sub
         print k,sub,cur
         self.result.append(array[cur])
-        self.rec(array[:cur] + array[cur+1:], n-1, k % sub)
+        self._rec(array[:cur] + array[cur+1:], n-1, k % sub)
 
 
 Permutations().get_permutation(8,31492)
