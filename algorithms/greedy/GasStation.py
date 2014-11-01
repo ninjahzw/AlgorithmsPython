@@ -10,6 +10,9 @@ Note:
 The solution is guaranteed to be unique.
 """
 __author__="HouZhaowei"
-class GasStation:
-    def can_complete_circuit(self, gas, cost): 
+class Solution:
+    # @param gas, a list of integers
+    # @param cost, a list of integers
+    # @return an integer
+    def canCompleteCircuit(self, gas, cost):
         
