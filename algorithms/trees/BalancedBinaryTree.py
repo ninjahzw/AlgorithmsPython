@@ -5,7 +5,7 @@
 # in which the depth of the two subtrees of every node never differ by more than 1.
 #
 # Idea:
-# NOTE NOTE! the hight of sub tree not compairing to each route!
+# NOTE NOTE! the height of sub tree not comparing to each route!
 # So for each subtree only need to return it's max height!
 # Definition for a  binary tree node
 class TreeNode:
@@ -33,7 +33,7 @@ class Determin:
             return -1
         if abs(right-left) > 1:
             return -1
-        # NOTE, only need to return the maxmum!
+        # NOTE, only need to return the maximum!
         return max(left,right)+1
 
 

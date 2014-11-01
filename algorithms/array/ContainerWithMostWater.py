@@ -20,6 +20,7 @@ same
 3. if they equals:
 reduce both.
 
+Tag: Array, Two Pointers
 """
 
 __author__ = 'HouZhaowei'

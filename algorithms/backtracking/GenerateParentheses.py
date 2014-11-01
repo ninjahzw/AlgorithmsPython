@@ -15,7 +15,7 @@ the result doesn't change, only the order of the result changes.
 (the traverse order changes, from left to right.)
 
 TODO:
-QUESTION: can this be considered a "backtracking" solution ?
+QUESTION: can this be considered as a "backtracking" solution ?
 """
 __author__ = 'HouZhaowei'
 
@@ -30,7 +30,7 @@ class GenerateParentheses:
 
     def rec(self, left_num, right_num, current, result, n):
         if left_num == n:
-            for i in xrange(right_num,n):
+            for i in xrange(right_num, n):
                 current += ")"
             result.append(current)
             return
