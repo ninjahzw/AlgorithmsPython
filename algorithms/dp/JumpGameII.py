@@ -33,10 +33,16 @@ class Solution:
         tmp[0] = 0
         length = len(A)-1
         for i, x in enumerate(A):
+            # NOTE here is x + 1, not i
             for j in xrange(1, x + 1):
                 index = i + j
+                # NOTE this part. 
+                # this 'continue' doesn't change the result, because 
+                # if index > length, then current index can reach the last index
+                # by smaller steps.
                 if index > length:
                     continue
+                # Always remember the smallest one at each index.
                 if tmp[index] == -1 or tmp[i] + 1 < tmp[index]:
                     tmp[index] = tmp[i] + 1
         return tmp[-1]
@@ -55,9 +61,11 @@ class Solution:
             if i + A[i] > max_range:
                 max_range = i + A[i]
             step -= 1
+            # NOTE most important part
             if step == 0:
                 jump += 1
                 step = max_range - i
         return jump
 
-print Solution().jump([1,2])
+print Solution().jump([1,2,1,3,2,4,1,5,2,3,6,1,2,3,1,1,6,3,0,1,2,6])
+print Solution().jump([1,2,1,3,2,4,1,5,2,3,6,1,2,3,1,1,6,3,0,1,2,6])
