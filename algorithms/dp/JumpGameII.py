@@ -67,5 +67,5 @@ class Solution:
                 step = max_range - i
         return jump
 
-print Solution().jump([1,2,1,3,2,4,1,5,2,3,6,1,2,3,1,1,6,3,0,1,2,6])
+print Solution().jumpDP([1,2,1,3,2,4,1,5,2,3,6,1,2,3,1,1,6,3,0,1,2,6])
 print Solution().jump([1,2,1,3,2,4,1,5,2,3,6,1,2,3,1,1,6,3,0,1,2,6])

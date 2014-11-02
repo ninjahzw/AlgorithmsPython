@@ -61,6 +61,13 @@ class EditDistance:
 
 
 
-print EditDistance().minDistanceNoneRecur("","")
-                
+print EditDistance().minDistanceNoneRecur("abcd","bcda")
+"""
+Element in tmp if imput is "abcd","bcda"
+[0, 1, 2, 3, 4]
+[1, 1, 2, 3, 3]
+[2, 1, 2, 3, 4]
+[3, 2, 1, 2, 3]
+[4, 3, 2, 1, 2]
+"""                
 

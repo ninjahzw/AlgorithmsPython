@@ -8,7 +8,7 @@ For example,
 
 Idea:
 Basically same as 'Permutations' problem in this directory.
-only for each recursion, add a dict to make sure same value will be ignored.
+only for each recursion, add a dict to make sure (FOR EACH LEVEL)same value will be ignored.
 """
 __author__ = 'HouZhaowei'
 class PermutationsII:
