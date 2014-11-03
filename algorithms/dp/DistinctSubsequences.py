@@ -3,7 +3,9 @@
 Problem:
 Given a string S and a string T, count the number of distinct subsequences of T in S.
 
-A subsequence of a string is a new string which is formed from the original string by deleting some (can be none) of the characters without disturbing the relative positions of the remaining characters. (ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not).
+A subsequence of a string is a new string which is formed from the original string by 
+deleting some (can be none) of the characters without disturbing the relative positions of 
+the remaining characters. (ie, "ACE" is a subsequence of "ABCDE" while "AEC" is not).
 
 Here is an example:
 S = "rabbbit", T = "rabbit"
@@ -16,6 +18,7 @@ The BackTracking Idea is more intuitive but will get "Time limit Exceed."
 More Efficient Idea? YES! DP!
 Let W(i, j) stand for the number of subsequences of S(0, i) in T(0, j). 
 If S.charAt(i) == T.charAt(j), W(i, j) = W(i-1, j-1) + W(i-1,j); Otherwise, W(i, j) = W(i-1,j).
+NOTE: Just list the example, we can figure out why this approach could work.
 """
 class Solution:
     def __init__(self):
@@ -43,6 +46,8 @@ class Solution:
     # Much more efficient way!
     # NOTE that we only need to compute the maximum count, so we can apply DP!
     # NOTE NOTE index must start from 0 to length, same to Edit Distance
+    # Because we must consider 0 length, and length from 1 to Array.length
+    # So the iteration starts from 1 and for every iteration, the index should be i-1 and j-1
     def numDistinctDP(self, S, T):
         tmp = [[ 0 for i in xrange(len(T) + 1)] for i in xrange(len(S) + 1) ]
         # if length of T is 0, then count is 1 (remove all in S)
@@ -58,4 +63,14 @@ class Solution:
         return tmp[-1][-1]
 
 print Solution().numDistinctDP("rabbbit", "rabbit")
-
+"""
+for the test input, result is:
+[1, 0, 0, 0, 0, 0, 0]
+[1, 1, 0, 0, 0, 0, 0]
+[1, 1, 1, 0, 0, 0, 0]
+[1, 1, 1, 1, 0, 0, 0]
+[1, 1, 1, 2, 1, 0, 0]
+[1, 1, 1, 3, 3, 0, 0]
+[1, 1, 1, 3, 3, 3, 0]
+[1, 1, 1, 3, 3, 3, 3]
+"""
