@@ -34,6 +34,9 @@ class Combinations:
         result = []
         # NOTE end-k+2, e.g. n=4,k=2 then only loop on 1,2,3. 
         for i in xrange(start,end-k+2):
+            # NOTE!NOTE! This part is the major difference from Permutations
+            # The conbination problem doesn't need to consider the elements
+            # before current value!
             values = self.rec(i+1, end, k-1)
             for x in values:
                 result.append([i] + x)

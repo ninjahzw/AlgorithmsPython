@@ -57,6 +57,7 @@ class Solution:
 
     # NOTE, IMP: To reverse a Linked List.
     # @return : head of new list
+    # the process for input "1234" is : 1234, 2134, 3214, 4321
     def reverseList(self,head):
         helper = ListNode(0)
         reverseTail = head
@@ -64,22 +65,44 @@ class Solution:
         while head.next:
             helper.next = head.next
             head.next = head.next.next
+            # guarantee the point will points to reverse head 
             helper.next.next = reverseHead
             reverseHead = helper.next
         return reverseHead, reverseTail
+
+    def reverseListRec(self, head):
+        reverse_head = head
+        while reverse_head.next:
+            reverse_head = reverse_head.next
+        self.rec(head)
+        return reverse_head
+
+    def rec(self, head):
+        if not head:
+            return None
+        node = self.rec(head.next)
+        if node:
+            node.next = head
+        head.next = None
+        return head
 
 a = ListNode(1)
 b = ListNode(2)
 c = ListNode(3)
 d = ListNode(4)
 e = ListNode(5)
-"""
 a.next = b
 b.next = c
 c.next = d
 d.next = e
-"""
 node = Solution().reverseBetween(a, 1, 1)
-while node:
-    print node.val
-    node = node.next
+#while node:
+#    print node.val
+#    node = node.next
+
+# Test reverse LL
+head = Solution().reverseListRec(a)
+while head:
+    print head.val
+    head = head.next
+
