@@ -21,10 +21,13 @@ This is actually a math problem.
 __author__ = 'HouZhaowei'
 
 # @return a list of integers
-def grayCode(self, n):
+def grayCode(n):
     result = []
     # NOTE: tricky approach to get the size of result
     size = 1 << n
     for i in range(size):
+        print i, (i >> 1) ^ i
         result.append((i >> 1) ^ i)
     return result
+
+grayCode(3)
