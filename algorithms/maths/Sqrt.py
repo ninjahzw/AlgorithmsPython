@@ -35,4 +35,4 @@ class Sqrt:
         else:
             self.rec(x, a, end)
 
-print Sqrt().sqrt(100)
+print Sqrt().sqrt(10)
