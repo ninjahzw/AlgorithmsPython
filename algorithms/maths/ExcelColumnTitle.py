@@ -20,9 +20,9 @@ class Solution:
         result = ""
         remainder = 1
         while num > 0:
+            # NOTE num has to be minus one, because starts from 1
             num = num - 1
-            remainder = num % 26 + 1
-            result = chr(remainder + ord('A') - 1) + result
+            result = chr(num % 26 + ord('A')) + result
             num = num / 26
         return result
 
