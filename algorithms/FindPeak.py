@@ -13,6 +13,7 @@ Problem:
 
 Idea:
 TRICK: add -inf to the head and tail of the array to eliminate boundary issues.
+NOTE: the basic idea is compair middle element to its neighbors:
 Do a binary search for a peak.
 For any mid element: 
 if it is bigger than its neighbors then peak found,

@@ -37,4 +37,4 @@ class UniqueBSTs:
                 tmp[i] += tmp[j] * tmp[i-j-1]
         return tmp[n]
 
-print UniqueBSTs().numTrees(4)
+print UniqueBSTs().numTrees(2)
