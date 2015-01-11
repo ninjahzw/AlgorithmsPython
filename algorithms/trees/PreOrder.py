@@ -22,6 +22,7 @@ class Solution:
         while len(stack) > 0:
             node = stack.pop()
             result.append(node.val)
+            # NOTE right must preceding left.
             if node.right:
                 stack.append(node.right)
             if node.left:
