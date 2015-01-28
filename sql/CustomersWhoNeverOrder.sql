@@ -1,4 +1,4 @@
-"""
+/*
 Suppose that a website contains two tables, the Customers table and the Orders table. Write a SQL query to find all customers who never order anything.
 
 Table: Customers.
@@ -27,7 +27,7 @@ Using the above tables as example, return the following:
 | Henry     |
 | Max       |
 +-----------+
-"""
+*/
 -- NOTE, the usage of NOT IN and IN
 select c.Name from Customers c where c.id not in (select CustomerId from Orders);
 
