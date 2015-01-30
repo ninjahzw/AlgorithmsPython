@@ -39,14 +39,14 @@ class SubSetsII:
             i=i+1
 
 class SubSetsIIDP:
-    # @param S, a list of integer
+    # NOTE WRONG SOLUTION
+    # @param S, a list of integer 
     # @return a list of lists of integer
     def subsetsWithDup(self, S):
         S.sort()
         result = [[]]
         for i in xrange(len(S)):
             while i < len(S)-1 and S[i] == S[i+1]:
-                print S[i],S[i+1]
                 i=i+1
             for j in xrange(len(result)):
                 copy = result[j][:]
@@ -55,3 +55,4 @@ class SubSetsIIDP:
         return result
 
 print SubSetsII().subsetsWithDup([1,2,2,2])
+print SubSetsIIDP().subsetsWithDup([1,2,2,2])

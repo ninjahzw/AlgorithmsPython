@@ -23,15 +23,12 @@ class MaximumSubarray:
             return 0
         tmp = [0 for x in A]
         tmp[0] = A[0]
+        maximum = A[0]
         # NOTE: the core part
         for i in xrange(1,len(A)):
             tmp[i] = max(tmp[i-1] + A[i], A[i])
-        maxmum = -float('inf')
-        # find the max value by traverse the result
-        for x in tmp:
-            if x > maxmum:
-                maxmum = x
-        return maxmum
+            maximum = max(maximum, tmp[i])
+        return maximum
 print MaximumSubarray().maxSubArray([1])
         
             
