@@ -38,6 +38,7 @@ class TwoSum:
         for x in self.table:
             y = value - x
             # NOTE if same value, then make sure at least two such value exists.
+            # And because we can not go progressively like two sum, we have to do this way
             if (y == x and self.table.get(y, 0) > 1) or (y != x and self.table.get(y, 0) > 0):
                 return True
         return False

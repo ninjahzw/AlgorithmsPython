@@ -57,7 +57,7 @@ class Solution:
             if node.right is not None : next.append(node.right)
         if len(next) > 0:
             self.rec(next)
-        # append result here will make sure the order is bottom up!
+        # NOTE append result here will make sure the order is bottom up!
         self.result.append(current)
 
 a = TreeNode(1)

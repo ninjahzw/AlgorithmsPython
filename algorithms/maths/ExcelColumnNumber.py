@@ -13,8 +13,7 @@ For example:
     AB -> 28 
 
 Idea:
-This is a base 64 calculation
-
+NOTE: This is a base 26 calculation, except that
 """
 class Solution:
     # @param s, a string

@@ -25,7 +25,7 @@
 #           + trees[1]*trees[n-2]
 #           + trees[0]*trees[n-1]
 # We can use an array to save the number of different trees that n integers can form. We fill the array from bottom to up, starting from 0 to n.
-
+# NOTE, because it is BST, for each root node, we can be sure left of it are smaller consecutive and right of it are bigger consecutive
 class UniqueBSTs:
     # @return an integer
     def numTrees(self, n):
