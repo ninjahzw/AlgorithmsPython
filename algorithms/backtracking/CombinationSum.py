@@ -23,10 +23,10 @@ class Solution:
     # @param candidates, a list of integers
     # @param target, integer
     # @return a list of lists of integers
-    def combinationSum(self, candidates, target):
+    def combinationSum_old(self, candidates, target):
         return self.rec(0, sorted(candidates), target)
 
-    def rec(self, start, candidates, target):
+    def rec_old(self, start, candidates, target):
         current = []
         for i in xrange(start, len(candidates)):
             x = candidates[i]
@@ -41,5 +41,26 @@ class Solution:
                 current.append([x] + one)
         return current
 
+    # NOTE much better solution!
+    # always use this way to solve this kind of problem
+    def combinationSum(self, candidates, target):
+        result = []
+        current = []
+        self.rec(current, result, 0, sorted(candidates), target)
+        return result
+
+    def rec(self, current, result, start, candidates, target):
+        # NOTE judge target here instead of in the for loop!
+        if target == 0:
+            # NOTE, must append a copy!!!
+            result.append(current[:])
+        if target < 0:
+            return
+        for i in xrange(start, len(candidates)):
+            x = candidates[i]
+            current.append(x)
+            self.rec(current, result, i, candidates, target - x)
+            current.pop()
+
 print Solution().combinationSum([2,3,6,7], 7)
-print Solution().combinationSum([8,7,4,3], 11)
+print Solution().combinationSum([3,4,7,8], 11)
