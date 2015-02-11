@@ -17,7 +17,7 @@ __author__ = 'HouZhaowei'
 class Permutations:
     # @param num, a list of integer
     # @return a list of lists of integers
-    def permute(self, num):
+    def permute_old(self, num):
         if len(num) == 1:
             return [num]
         result = []
@@ -26,5 +26,20 @@ class Permutations:
             for y in sub:
                 result.append([x] + y)
         return result
+     
+    # NOTE new and recommended approach!
+    def permute(self, num):
+        current, result = [],[]
+        self.rec(current,result,num)
+        return result
+        
+    def rec(self, current, result, num):
+        if len(num) == 0:
+            result.append(current[:])
+        for i, x in enumerate(num):
+            current.append(x)
+            self.rec(current, result, num[0:i] + num[i+1:len(num)])
+            current.pop()
+
 
 print Permutations().permute([1,2,3])

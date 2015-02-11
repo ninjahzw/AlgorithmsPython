@@ -57,10 +57,13 @@ class Solution:
         if target < 0:
             return
         for i in xrange(start, len(candidates)):
+            # NOTE to eliminate dups
+            if i > start and candidates[i] == candidates[i-1]:
+                continue
             x = candidates[i]
             current.append(x)
             self.rec(current, result, i, candidates, target - x)
             current.pop()
 
 print Solution().combinationSum([2,3,6,7], 7)
-print Solution().combinationSum([3,4,7,8], 11)
+print Solution().combinationSum([2,2,2,1,3], 5)
