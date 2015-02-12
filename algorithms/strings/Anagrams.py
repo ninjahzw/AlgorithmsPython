@@ -20,6 +20,7 @@ class Anagrams:
         tmp = dict()
         for i,item in enumerate(strs):
             origin = item
+            # NOTE to sort a string!
             item = ''.join(sorted(item))
             if item not in tmp :
                 tmp[item] = i
@@ -33,5 +34,5 @@ class Anagrams:
             tmp[item] = -1 
         return list(result)
 
-print Anagrams().anagrams(["dabc","cba","bca"])
+print Anagrams().anagrams(["dabc","cba","bca","abcd"])
 

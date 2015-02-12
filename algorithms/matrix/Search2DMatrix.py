@@ -16,7 +16,8 @@ Given target = 3, return true.
 
 
 Idea:
-TODO..
+NOTE! NOTE!
+The best solution is on Leetcode, check the latest submitted solution!
 """
 __author__ = 'Zhaowei'
 

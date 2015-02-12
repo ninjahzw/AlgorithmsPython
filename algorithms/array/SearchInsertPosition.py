@@ -12,6 +12,8 @@
 #
 # Idea:
 # Just pay attention to boundary conditions.
+# NOTE there is actually log(n) solution!
+
 class SearchInsertPosition:
     # @param A, a list of integers
     # @param target, an integer to be inserted
@@ -27,3 +29,22 @@ class SearchInsertPosition:
             if x >= target:
                 return i
         return 0
+
+    # NOTE ! log(n) solution
+    # @param A, a list of integers
+    # @param target, an integer to be inserted
+    # @return integer
+    def searchInsert(self, A, target):
+        start = 0
+        end = len(A)-1
+        while start <= end:
+            mid = (start + end)/2
+            if A[mid] == target:
+                return mid
+            if A[mid] < target:
+                start = mid+1
+                continue
+            if A[mid] > target:
+                end = mid - 1
+        # NOTE NOTE NOTE !!! do not return start + 1 or end
+        return start
