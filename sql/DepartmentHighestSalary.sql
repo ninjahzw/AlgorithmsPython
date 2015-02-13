@@ -50,6 +50,11 @@ can satisfy 'each employee to specific department' conditoon.
 select t.dName, e1.name, e1.Salary from (select max(e.salary) sal, d.Id dId, d.Name dName from Department d join Employee e on e.DepartmentId = d.Id group by d.Id) t, Employee e1 where t.dId = e1.DepartmentId and e1.Salary = t.sal
 
 /*
+NOTE !! IMPORTANT
+The following approach use same approach to other similiar problems!!
+*/
+SELECT d1.Name, e1.Name, e1.Salary FROM Employee e1 JOIN Department d1 ON e1.DepartmentId = d1.Id WHERE 0 = (SELECT COUNT(DISTINCT e2.Salary) FROM Employee e2 WHERE e2.DepartmentId = e1.DepartmentId and e2.Salary > e1.Salary)
+/*
 NOTE concerning Group by:
 mysql> select * from reserves;
 +-----+-----+---------------------+
