@@ -6,8 +6,8 @@ class classifier:
         self.train_labels = 'files/rcv1.train.labels'
         self.test_features = 'files/rcv1.test.features'
         self.test_labels = 'files/rcv1.test.labels'
-        self.train_data = []
-        self.labels_data = []
+        self.data = []
+        self.labels = []
         self.terms = 47236
         # initialize w and b
         self.w = [0 for x in xrange(self.terms)]
@@ -22,25 +22,25 @@ class classifier:
                 rid = items[0]
                 feature = [int(items[1]), float(items[2])]
                 if rid != prev:
-                    self.train_data.append(row)
+                    self.data.append(row)
                     row = []
                     prev = rid
                     continue
                 row.append(feature)
-            self.train_data.append(row)
+            self.data.append(row)
 
     def load_train_labels(self, fname):
         with open(fname) as f:
             for line in f:
-                self.labels_data.append(int(line.strip()))
+                self.labels.append(int(line.strip()))
     
     def train(self):
         error = 0
         # load data
         self.load_train_data(self.train_features)
         self.load_train_labels(self.train_labels)
-        for i, x in enumerate(self.train_data):
-            y = int(self.labels_data[i])
+        for i, x in enumerate(self.data):
+            y = int(self.labels[i])
             dp = self.dot_product(x, self.w)
             if y * (self.dot_product(x, self.w) + self.b) <= 0:
                 self.improve_w(self.w, y, x)
@@ -53,8 +53,8 @@ class classifier:
         # load data
         self.load_train_data(self.test_features)
         self.load_train_labels(self.test_labels)
-        for i, x in enumerate(self.train_data):
-            y = int(self.labels_data[i])
+        for i, x in enumerate(self.data):
+            y = int(self.labels[i])
             dp = self.dot_product(x, self.w)
             if y * (self.dot_product(x, self.w) + self.b) <= 0:
                 error += 1
@@ -75,6 +75,8 @@ class classifier:
 
 c = classifier()
 print c.train()
+c.data = []
+c.labels = []
 print c.test()
 #print len(c.train_data), len(c.labels_data)
 #print c.train_data[1]
