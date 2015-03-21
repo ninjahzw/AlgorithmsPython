@@ -20,6 +20,7 @@ class PermutationsII:
             return [num]
         result = []
         for i, x in enumerate(num):
+            # NOTE ! if it is not sorted, use hash to eliminate dups.
             if x in memory:
                 continue
             else:
