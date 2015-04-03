@@ -33,4 +33,5 @@ class Pow:
             return value*value
         else:
             return value*value*x
-print Pow().power(0.00001,2147483647)
+print Pow().pow(0.44528, 1)
+

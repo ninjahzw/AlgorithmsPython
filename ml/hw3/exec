@@ -1,0 +1,34 @@
+# ./svm_learn -c 0.01 -t 2 -g 0.01 data/cover.train learn.model1
+# ./svm_learn -c 0.01 -t 2 -g 0.1 data/cover.train learn.model2
+# ./svm_learn -c 0.01 -t 2 -g 1 data/cover.train learn.model3
+# ./svm_learn -c 0.01 -t 2 -g 10 data/cover.train learn.model4
+# ./svm_learn -c 0.1 -t 2 -g 0.01 data/cover.train learn.model5
+# ./svm_learn -c 0.1 -t 2 -g 0.1 data/cover.train learn.model6
+# ./svm_learn -c 0.1 -t 2 -g 1 data/cover.train learn.model7
+# ./svm_learn -c 0.1 -t 2 -g 10 data/cover.train learn.model8
+# ./svm_learn -c 1 -t 2 -g 0.01 data/cover.train learn.model9
+# ./svm_learn -c 1 -t 2 -g 0.1 data/cover.train learn.model10
+# ./svm_learn -c 1 -t 2 -g 1 data/cover.train learn.model11
+# ./svm_learn -c 1 -t 2 -g 10 data/cover.train learn.model12
+# ./svm_learn -c 10 -t 2 -g 0.01 data/cover.train learn.model13
+# ./svm_learn -c 10 -t 2 -g 0.1 data/cover.train learn.model14
+# ./svm_learn -c 10 -t 2 -g 1 data/cover.train learn.model15
+# ./svm_learn -c 10 -t 2 -g 10 data/cover.train learn.model16
+# 
+#
+#./svm_learn -b 0 -c 1 -t 2 -g 1 data/cover.single single1_1
+#./svm_learn -b 0 -c 1 -t 2 -g 10 data/cover.single single1_10
+#./svm_learn -b 0 -c 10 -t 2 -g 0.1 data/cover.single single10_0.1
+#./svm_learn -b 0 -c 1 -t 2 -g 0.1 data/cover.single single1_0.1
+#./svm_learn -b 0 -c 0.1 -t 2 -g 0.01 data/cover.single single0.1_0.01
+#
+./svm_classify data/cover.test single1_1 svm_predictions
+python test.py
+#./svm_classify data/cover.val single1_10 svm_predictions
+#python test.py
+#./svm_classify data/cover.val single1_0.1 svm_predictions
+#python test.py
+#./svm_classify data/cover.val single10_0.1 svm_predictions
+#python test.py
+#./svm_classify data/cover.val single0.1_0.01 svm_predictions
+#python test.py
