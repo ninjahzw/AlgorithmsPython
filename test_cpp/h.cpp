@@ -5,8 +5,16 @@
 #include <unistd.h>
 using namespace std;
 
+class Test{
+ public:
+  Test(int32_t&& a){
+  }
+};
+
 int main(){
-    std::string a("a");
-    a << "_" << "b";
-    cout << a << endl;
+  Test t(1); 
+  Test t1 = t;
+  std::string a("a");
+  int x(10);
+  cout << x << endl;
 }
